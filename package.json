@@ -26,7 +26,9 @@
     "progress-css": "git://github.com/jh3y/progre-c-ss.git#v1.4.0",
     "angular-elastic": "~2.3.5",
     "marked" : "0.3.0",
-    "angular-md": "1.0.0"
+    "angular-md": "1.0.0",
+    "angular-socket-io": "0.7.0",
+    "socket.io-client": "1.4.6"
   },
   "devDependencies": {
     "autoprefixer": "6.0.2",

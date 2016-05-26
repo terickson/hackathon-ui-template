@@ -55,7 +55,8 @@ module.exports = {
             'mentio',
             'ngEmoticons',
             'monospaced.elastic',
-            'yaru22.md'
+            'yaru22.md',
+            'btford.socket-io'
             ]
     },
 
@@ -80,6 +81,7 @@ module.exports = {
         ],
         external: [
             depDir + '/jquery/dist/jquery.js',
+            depDir + '/socket.io-client/socket.io.js',
             depDir + '/angular/angular.js',
             depDir + '/angular-animate/angular-animate.js',
             depDir + '/angular-elastic/elastic.js',
@@ -102,7 +104,8 @@ module.exports = {
             depDir + '/moment/moment.js',
             depDir + '/ng-emoticons/dist/ng-emoticons.min.js',
             depDir + '/release-notes/dist/release-notes.js',
-            depDir + '/sugar/release/sugar-full.development.js'
+            depDir + '/sugar/release/sugar-full.development.js',
+            depDir + '/angular-socket-io/socket.js'
         ]
     },
     /*
