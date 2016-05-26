@@ -1,0 +1,107 @@
+
+.categories {
+    .type {
+        .round;
+        color: @light;
+        background: @detail;
+        padding: 4px 8px;
+        &:before {
+            color: @light;
+            font-family: FontAwesome;
+            font-size: 0.8em;
+            padding-right: 4px;
+            position: relative;
+            top: -1px;
+        }
+    }
+    .request {
+        .type {
+            background: @atc-red;
+            &:before {
+                content: @fa-var-fire-extinguisher;
+            }
+        }
+    }
+    .practice {
+        .type {
+            background: @atc-rust;
+            &:before {
+                content: @fa-var-globe;
+            }
+        }
+    }
+    .lab {
+        .type {
+            background: @atc-brown;
+            &:before {
+                content: @fa-var-flask;
+            }
+        }
+    }
+    .model {
+        .type {
+            background: darken(@atc-seafoam, 4%);
+            &:before {
+                content: @fa-var-hdd-o;
+            }
+        }
+    }
+    .asset {
+        .type {
+            background: @atc-green;
+            &:before {
+                content: @fa-var-puzzle-piece;
+            }
+        }
+    }
+    .rack {
+        .type {
+            background: darken(@atcOrange, 4%);
+            &:before {
+                content: @fa-var-server;
+            }
+        }
+    }
+    .capability,
+    .environment {
+        .type {
+            background: @atcBlueLight;
+            &:before {
+                content: @fa-var-cloud;
+                top: 0;
+            }
+        }
+    }
+    .poc {
+        .type {
+            background: @atc-choco;
+            &:before {
+                content: @fa-var-line-chart;
+            }
+        }
+    }
+    .deployment {
+        .type {
+            background: @atc-olive;
+            &:before {
+                content: @fa-var-rocket;
+            }
+        }
+    }
+    .person {
+        .type {
+            background: @atcBlue;
+            &:before {
+                content: @fa-var-user;
+            }
+        }
+    }
+    .all {
+        .type {
+            background: @wwtBlue;
+            &:before {
+                content: @fa-var-circle-o;
+            }
+        }
+    }
+}

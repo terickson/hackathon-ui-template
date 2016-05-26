@@ -1,0 +1,9 @@
+<div class="paginator">
+    <a class="btn btn-link" ng-class="{ disabled: !canGoToPreviousPage() }" ng-click="previousPage()">
+        <i class="fa fa-chevron-left"></i>
+    </a>
+    <p class="pageCount">Page <em>{{ filter.currentPage }}</em></p>
+    <a class="btn btn-link" ng-class="{ disabled: !canGoToNextPage() }" ng-click="nextPage()">
+        <i class="fa fa-chevron-right"></i>
+    </a>
+</div>

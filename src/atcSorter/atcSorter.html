@@ -1,0 +1,17 @@
+<div class="atcSorter dropdown">
+    Sort by:
+    <a class="dropdown-toggle" id="sortDropDown" data-toggle="dropdown">
+        {{ objectList.$sortOptions.field.name }}
+        <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" role="menu">
+        <li ng-repeat="field in objectList.$sortOptions.fields">
+            <a ng-click="objectList.$sortBy(field); objectList.$resetPage()" class="dropdown-toggle-grab">{{ field.name }}</a>
+        </li>
+    </ul>
+    Order:
+    <a class="order-sort">
+        <i class="fa fa-sort-amount-desc clickable order-click" ng-show="objectList.$sortOptions.desc === true" ng-click="objectList.$toggleSortOrder(); objectList.$resetPage()"></i>
+        <i class="fa fa-sort-amount-asc clickable order-click" ng-show="objectList.$sortOptions.desc === false" ng-click="objectList.$toggleSortOrder(); objectList.$resetPage()"></i>
+    </a>
+</div>

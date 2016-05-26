@@ -1,0 +1,130 @@
+
+.slider {
+    .transition(top);
+    box-shadow: 0 2px 4px @detail;
+    position: fixed;
+    left: @sidebar-width;
+    right: 0;
+    top: @total-top + @topbar-height - 5px;
+    background-color: white;
+    padding: 20px;
+    z-index: @z-slider;
+    border-bottom: 1px solid @detail;
+    &.ng-enter,
+    &.ng-leave.ng-leave-active {
+        top: 0 - @total-top;
+    }
+    &.ng-leave,
+    &.ng-enter.ng-enter-active,
+    &.ng-enter.ng-leave-active {
+        top: @total-top + @topbar-height - 5px;
+    }
+    form {
+        padding-bottom: 24px;
+        article {
+            &.new-document {
+                .fields {
+                    padding-bottom: 0;
+                    .new-field {
+                        &:first-child { // upload type toggler
+                            flex: 1 0 32px;
+                            margin-right: 4px;
+                        }
+                        aside { // flex upload box
+                            .flex;
+                        }
+                    }
+                }
+                .filename {
+                    .round;
+                    flex: 1;
+                    padding: 2px 8px;
+                    font-size: 0.9em;
+                    border: 1px solid @t-65;
+                    margin-right: 4px;
+                }
+                div.btn {
+                    flex: 0 0 80px;
+                    padding: 4px 8px;
+                }
+            }
+        }
+        h3 {
+            margin-bottom: 24px;
+        }
+        label {
+            font-weight: 300;
+            margin-left: 4px;
+            span {
+              color: @detail;
+              &.error {
+                color: @wwtRed;
+              }
+            }
+        }
+        aside {
+            .alert {
+                padding: 8px;
+                margin-bottom: 4px;
+            }
+        }
+        .fields {
+            .flex;
+            justify-content: space-between;
+            padding-bottom: 24px;
+            clear: both;
+            select {
+                display: block;
+            }
+            .new-field {
+                flex: 2;
+                margin-right: 12px;
+                &:last-child {
+                    margin-right: 0;
+                }
+                &.short-field {
+                    flex: 1;
+                }
+                &.long-field {
+                    flex: 3;
+                }
+            }
+            .form-control {
+                height: 28px;
+                &.connectivity {
+                  height: auto;
+                  margin: 8px 0 0 12px;
+                }
+                &.path {
+                    &.disabled {
+                        &::-webkit-input-placeholder {
+                            opacity: 0;
+                        }
+
+                        &:-moz-placeholder {
+                            /* Firefox 18- */
+                            opacity: 0;
+                        }
+
+                        &::-moz-placeholder {
+                            /* Firefox 19+ */
+                            opacity: 0;
+                        }
+
+                        &:-ms-input-placeholder {
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .new-creds {
+            width: 43.4%;
+        }
+    }
+}
+#page-admin {
+    .slider {
+        left: 0;
+    }
+}

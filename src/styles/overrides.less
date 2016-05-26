@@ -1,0 +1,173 @@
+
+// bootstrap
+a {
+    &:hover {
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+.navbar {
+    border-radius: 0;
+}
+.btn {
+    .shadow;
+    border: none;
+    font-weight: 300;
+    padding: 8px 12px;
+    border-radius: 2px;
+}
+.btn:active,
+.btn.active,
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+    border: none;
+    outline: 1px dotted @detail;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+.btn-link {
+    box-shadow: none;
+}
+.disabled {
+    cursor: not-allowed;
+}
+.top-bar {
+    .input-group {
+        .input-group-addon {
+            width: 36px;
+        }
+    }
+}
+
+// font awesome
+.caret-fix { // drop it on the <i>
+    margin-right: 2px;
+    width: 6px;
+    &.fa-caret-down:before {
+        margin-left: -3px;
+    }
+}
+
+// side-nav
+#snp-toggle {
+    margin: 0;
+}
+
+// feedback
+.wwt-feedback,
+.wwt-feedback-detail {
+    padding-top: @total-top;
+    padding-bottom: 32px;
+    background: @bgPage;
+    .wwt-fb-top-bar {
+        .sticky;
+        padding: 10px 14px;
+        align-items: center;
+    }
+    .ribbon {
+        z-index: 4;
+        text-transform: uppercase;
+    }
+    .wwt-fb-list {
+        padding-top: 16px;
+        padding-bottom: 0;
+        li article.idea-new textarea {
+            height: 150px;
+        }
+    }
+    .delete-confirmation {
+        font-style: italic;
+        .btn {
+            &.fb-delete-btn {
+                box-shadow: none;
+                border: 1px solid #a64f51;
+                font-weight: normal;
+            }
+        }
+    }
+    .btn:active,
+    .btn.active,
+    .btn:focus,
+    .btn:active:focus,
+    .btn.active:focus {
+        outline: none;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
+.wwt-feedback-detail {
+    article {
+        min-height: 0;
+        header {
+        margin-bottom: 16px;
+            h1 {
+                padding-top: 12px;
+                padding-left: 8px;
+                margin-bottom: 0;
+                font-weight: 300;
+            }
+        }
+        > p:not(.ribbon) {
+            flex: 1 0 auto;
+            padding-bottom: 20px;
+        }
+        &:not(:first-of-type) {
+            display: block;
+        }
+        &:last-of-type {
+            padding: 0;
+        }
+    }
+    .fb-feedback-detail-body {
+        padding-left: 8px !important;
+    }
+    .delete-confirmation {
+        font-style: italic;
+        .btn {
+            &.fb-delete-btn {
+                box-shadow: none;
+                border: 1px solid #a64f51;
+                font-weight: normal;
+            }
+        }
+    }
+}
+.wwt-comment-stream {
+    overflow-y: hidden;
+    @media all and (max-width: 720px) {
+        overflow-y: scroll;
+    }
+    .pre-line {
+        white-space: normal;
+    }
+    .cs-user-image-wrapper {
+        > * {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+    .cs-subscriptions {
+        margin: 20px 0;
+        border-color: @detail;
+        overflow-y: scroll;
+        @media all and (max-width: 720px) {
+            overflow-y: visible;
+            margin: 0;
+        }
+    }
+}
+.idea {
+    h4 {
+        a {
+            &:hover {
+                border-bottom: none !important;
+            }
+        }
+    }
+}
+.comment-count {
+    a {
+        .underline;
+    }
+}

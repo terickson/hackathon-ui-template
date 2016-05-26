@@ -1,0 +1,330 @@
+
+.titlebar {
+    .clearfix;
+    background: @titlebar-color;
+    height: @titlebar-height;
+    border-bottom: 1px solid @t-25;
+    padding: 6px 12px;
+    position: relative;
+    margin-bottom: 0px;
+    display: flex;
+    h1 {
+        white-space: nowrap;
+        font-weight: 400;
+        font-size: 1.1em;
+        margin-top: 2px;
+        height: 26px;
+        padding-right: 12px;
+        color: @base;
+    }
+    a {
+        .transition(color);
+        color: @t-25;
+        &:hover {
+            color: @base;
+        }
+    }
+    #wwtLogo {
+        display: inline;
+        width: 48px;
+        margin: 0;
+    }
+    .wwt-environment {
+        display: block;
+        border-right: 1px solid @t-65;
+        margin-right: 12px;
+        p {
+            margin: 0;
+            margin-top: 2px;
+            margin-right: 12px;
+            border-radius: @radius;
+            border: 0;
+            padding: 0 8px;
+            color: @light;
+            font-weight: 300;
+            text-transform: uppercase;
+            font-size: 0.8em;
+        }
+    }
+    .local {
+        background: linear-gradient(to bottom,
+            lighten(desaturate(@atc-teal, 25%), 4%),
+            desaturate(@atc-teal, 25%));
+    }
+    .dev {
+        background: linear-gradient(to bottom,
+            lighten(desaturate(@atcBlue, 25%), 16%),
+            lighten(desaturate(@atcBlue, 25%), 12%));
+    }
+    .test {
+        background: linear-gradient(to bottom,
+            lighten(desaturate(#fa0, 15%), 4%),
+            desaturate(#fa0, 15%));
+    }
+    .megasearch {
+        height: inherit;
+        &.open {
+            a {
+                color: @base;
+            }
+        }
+        a {
+            .pull-left;
+            width: 24px;
+            height: 100%;
+            color: @t-25;
+            &.ghost {
+                width: 80px;
+                display: none;
+                @media (min-width: @bp-phablet) {
+                    display: block;
+                }
+            }
+            &:hover {
+                color: @base;
+            }
+        }
+        form {
+            .pull-left;
+            height: inherit;
+            background: @light;
+            margin-top: -6px;
+            border-bottom: 1px solid @t-25;
+            input {
+                border: 0;
+                border-left: 1px solid @t-65;
+                border-right: 1px solid @t-65;
+                height: 100%;
+                width: 180px;
+                padding: 0;
+                padding-left: 8px;
+                font-weight: 300;
+                font-size: 1.0em;
+                line-height: 1.0em;
+                background: @light;
+                transition: width ease-in-out 0.1s, padding ease-in-out 0.1s;
+                &:focus {
+                    outline: none;
+                }
+                &.ng-enter, &.ng-leave.ng-leave-active {
+                    width: 0;
+                    padding: 0;
+                }
+                &.ng-leave, &.ng-enter.ng-enter-active {
+                    width: 180px;
+                    padding: 0;
+                    padding-right: 12px;
+                }
+            }
+        }
+    }
+    .panel {
+        margin: 0 0 0 auto;
+        &.open {
+            @media (max-width: @bp-phablet) {
+                display: none;
+            }
+        }
+        a {
+            display: inline-block;
+            height: 26px;
+            margin-right: 8px;
+            color: @t-25;
+            &.open {
+                color: @base;
+            }
+            &.feedback {
+                position: relative;
+                top: 0;
+                font-size: 18px;
+            }
+            &.release {
+                i {
+                    top: 2px;
+                }
+            }
+            &.story {
+                display: none;
+                @media (min-width: @bp-phablet) {
+                    display: inline-block;
+                }
+            }
+            &:last-of-type {
+                font-size: 16px;
+                margin-right: 12px;
+                padding: 0 12px 0 0;
+                border-right: 1px solid @t-65;
+                i {
+                    top: 2px;
+                }
+            }
+            &:hover {
+                color: @base;
+            }
+            i {
+                position: relative;
+                top: 3px;
+            }
+        }
+    }
+    .user-img:after {
+        box-shadow: 0 0 1px @text;
+    }
+}
+#navbar {
+    .gradient(@atcBlue);
+    position: relative;
+    border-bottom: 1px solid @t-25;
+    height: @nav-height;
+    ul {
+        .flex(row, wrap, flex-start);
+        justify-content: center;
+        align-content: flex-start;
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        flex: 1 0 20%;
+        &.disabled {
+            a {
+                .gradient(@atcBlue);
+                color: darken(@white, 24%);
+                cursor: default;
+                &:before {
+                    .fa;
+                    content: @fa-var-lock;
+                    font-size: 0.7em;
+                    margin-right: 4px;
+                    position: relative;
+                    top: -2px;
+                }
+            }
+        }
+        &:first-child {
+            a {
+                border-left: 0;
+            }
+        }
+        &:last-child {
+            a {
+                border-right: 0;
+            }
+        }
+    }
+    a {
+        .pad;
+        .gradient(@atcBlue);
+        color: @white;
+        font-size: 1.2em;
+        letter-spacing: 0.04em;
+        display: block;
+        text-align: center;
+        font-weight: 300;
+        border-left: 1px solid @atcBlueLight;
+        border-right: 1px solid @atcBlueDark;
+        &:hover, &:focus, &.active {
+            .gradient(lighten(@atcBlue, 8%));
+            color: @white;
+            outline: none;
+            text-decoration: none;
+        }
+        &.active {
+            cursor: default;
+        }
+    }
+    .explore,
+    .reports {
+        display: none;
+        @media (min-width: @bp-tablet) {
+            display: list-item;
+        }
+    }
+}
+nav:not(#navbar) {
+    ul {
+        .flex;
+        li {
+            border-bottom: 1px solid @detail;
+            flex: 1;
+            + li {
+                a {
+                    border-left: 1px solid @detail;
+                }
+            }
+        }
+        .active {
+            border-bottom-color: @light;
+            a {
+                background: @light;
+                font-weight: 400;
+                cursor: default;
+                color: @text;
+                &:hover {
+                    background: @light;
+                }
+            }
+        }
+    }
+    a {
+        .gradient;
+        transition: background 100ms linear, color 300ms, linear;
+        outline: 0;
+        display: block;
+        white-space: nowrap;
+        padding: 12px 8px;
+        text-align: center;
+        &:hover {
+            text-decoration: none;
+            background: lighten(@white, 4%);
+        }
+        @media (max-width: @bp-phablet) {
+            font-size: 0.7em;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+    }
+}
+
+.user-img::before {
+    -moz-osx-font-smoothing: grayscale;
+    border-radius: 50%;
+    box-shadow: 0 0 1px #777 inset;
+    color: #ccc;
+    font-family: "snpFont";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    transition: all 250ms ease-in-out 0s;
+}
+.user-img::before, .user-img::after {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.user-img::before {
+}
+*::before, *::after {
+    box-sizing: border-box;
+}
+.user-img::before, .user-img::after {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.user-img::after {
+    box-shadow: 0 0 1px #333;
+}
+.user-img::before, .user-img::after {
+    box-sizing: border-box;
+}
+.user-img {
+    float: left;
+    height: 28px;
+    position: relative;
+    width: 28px;
+}

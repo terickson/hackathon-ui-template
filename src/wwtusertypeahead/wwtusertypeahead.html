@@ -1,0 +1,11 @@
+<input type="text"
+       wwt-input-focus="{{wwtUserTypeaheadFocus}}"
+       ng-model="wwtUserTypeaheadModel"
+       typeahead="person as buildFullNameAndUserName(person) for person in userFullSearch($viewValue).$promise | orderBy:'name' | limitTo: 8"
+       typeahead-editable="false"
+       typeahead-apend-to-body="true"
+       tabindex="{{wwtUserTypeaheadTabIndex}}"
+       typeahead-on-select="wwtUserTypeaheadOnSelect({user: $item})"
+       name="{{wwtUserTypeaheadInputName}}"
+       ng-required="{{wwtUserTypeaheadInputRequired}}"
+       class="form-control">

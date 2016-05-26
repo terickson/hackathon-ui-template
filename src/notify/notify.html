@@ -1,0 +1,11 @@
+<div id="notify-list-container">
+    <ul class="notify-list">
+        <li ng-repeat="notification in notifications" class="anim-ng">
+            <i ng-click="dismiss(notification)" class="fa fa-close clickable"></i>
+            <p class="default-icon" ng-if="!notification.elementType">
+                <i class="fa {{ notification.defaultIcon }}"></i>
+            </p>
+            <p class="notify-text" ng-class="notification.type" ng-bind-html="notification.text"></p>
+        </li>
+    </ul>
+</div>

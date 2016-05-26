@@ -1,0 +1,47 @@
+.popup-alert {
+    opacity: 1;
+    position: fixed;
+    top: 60px;
+    left: 12%;
+    right: 12%;
+    z-index: 61;
+    text-align: center;
+    &:before {
+        .round;
+        .shadow;
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0.50;
+        background: @white;
+    }
+    @media (min-width: @bp-desk) {
+        top: 60px;
+        left: 16%;
+        right: 16%;
+    }
+    @media (min-width: @bp-superwide) {
+        top: 100px;
+        left: 32%;
+        right: 32%;
+    }
+    &.ng-leave, &.ng-enter {
+        .transition();
+    }
+    &.ng-enter, &.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+    &.ng-leave, &.ng-enter.ng-enter-active {
+        opacity: 1;
+    }
+    h3 {
+        color: @gray-dark;
+        opacity: 0.75;
+        padding: 10px;
+        font-weight: 400;
+    }
+}
