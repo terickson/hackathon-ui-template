@@ -3,7 +3,9 @@ appModule.controller('MainCtrl', function ($scope, navService, Actions, mySocket
     $scope.messages = [];
     $scope.testTropo = testTropo;
     $scope.testSpark = testSpark;
+    $scope.testAlert = testAlert;
     $scope.getClass = getClass;
+    $scope.clearAlert = clearAlert;
     $scope.alert = null;
     mySocket.on('alert', function (message) {
         $scope.alert = message.data;
@@ -12,6 +14,10 @@ appModule.controller('MainCtrl', function ($scope, navService, Actions, mySocket
     function init(){
         navService.setActive('main');
     }
+
+    function clearAlert(){
+        $scope.alert = null;
+    }    
 
     function testTropo(){
         var newAction = new Actions({
@@ -40,6 +46,20 @@ appModule.controller('MainCtrl', function ($scope, navService, Actions, mySocket
             addMessage('Spark Action Failed. Error: ' + response.status + ' ' + response.statusText);
         });
     }
+
+    function testAlert(){
+        var newAction = new Actions({
+            type: 'spark',
+            roomname: "hackathon2016",
+            message:"ALERT: This is a test of the alert system"
+        });
+        newAction.$save(function success(action) {
+            addMessage('Alert Processed: ' + action.id);
+        },
+        function error(response){
+            addMessage('Alert Failed. Error: ' + response.status + ' ' + response.statusText);
+        });
+    }    
 
     function addMessage(text){
         $scope.messages.push({id: Date(), value: text});

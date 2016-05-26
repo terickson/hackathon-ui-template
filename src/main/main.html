@@ -1,6 +1,6 @@
 <div id="page-main">
     <div ng-if="alert">
-    <h3>{{alert}}</h3> <div ng-click="alert=''">x</div>
+    <h2>{{alert}}  <span ng-click="clearAlert()" style="cursor: pointer">x</span> <h2>
     </div>
     <section class="controls">
         <article class="links">
@@ -8,6 +8,7 @@
                 <li>
                     <a ng-click="testTropo()">Test Tropo</a>
                     <a ng-click="testSpark()">Test Spark</a>
+                    <a ng-click="testAlert()">Test WebSocket Alert</a>
                 </li>
             </ul>
         </article>
