@@ -310,7 +310,7 @@ module.exports = function (grunt) {
             overwrite: true,                 // overwrite matched source files
             replacements: [{
               from: /\('restBaseUrl', '.*'\);/g,
-              to: "('restBaseUrl', '/light-system-api');"
+              to: "('restBaseUrl', 'http://ciscoHackathon2016.cloudapp.net:5000/');"
             }]
           },
           envCheck: {
