@@ -4,9 +4,13 @@
     </div>
     <section class="controls">
         <article class="links">
+        <div>
+        <label ng-if="!phoneNumbers" >To Test Tropo Add Phone Numbers: </label>
+        <input ng-model="phoneNumbers" placeholder="ex: 15209756399,15204292950"\>
+        </div>
             <ul>                           
                 <li>
-                    <a ng-click="testTropo()">Test Tropo</a>
+                    <a ng-if="phoneNumbers" ng-click="testTropo()">Test Tropo</a>
                     <a ng-click="testSpark()">Test Spark</a>
                     <a ng-click="testAlert()">Test WebSocket Alert</a>
                 </li>

@@ -7,6 +7,7 @@ appModule.controller('MainCtrl', function ($scope, navService, Actions, mySocket
     $scope.getClass = getClass;
     $scope.clearAlert = clearAlert;
     $scope.alert = null;
+    $scope.phoneNumbers = null;
     mySocket.on('alert', function (message) {
         $scope.alert = message.data;
     });
@@ -20,9 +21,10 @@ appModule.controller('MainCtrl', function ($scope, navService, Actions, mySocket
     }    
 
     function testTropo(){
+        var phoneNumberArray = $scope.phoneNumbers.split(',');
         var newAction = new Actions({
             type: 'tropo',
-            phoneNumbers: ["15209756399"],
+            phoneNumbers: phoneNumberArray,
             message:"This is a test"
         });
         newAction.$save(function success(action) {
@@ -31,6 +33,7 @@ appModule.controller('MainCtrl', function ($scope, navService, Actions, mySocket
         function error(response){
             addMessage('Tropo Action Failed. Error: ' + response.status + ' ' + response.statusText);
         });
+        $scope.phoneNumbers = null;
     }
 
     function testSpark(){
