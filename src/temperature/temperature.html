@@ -1,0 +1,22 @@
+<div id="page-main">
+    <section class="controls">
+        <article class="links">
+            <ul>                           
+                <li>
+                    <a ng-click="resetReadings()">Reset Readings</a>
+                </li>
+            </ul>
+        </article>
+
+        <article>
+            <ul class="transactionListing">
+                <li class="header">
+                    <p>Last 10 Readings</p>
+                </li>
+                <li class="card-message" ng-class="getClass($index)" ng-repeat="message in messages | orderBy:'id':true">
+                    <p>{{message.value}}</p>
+                </li>
+            </ul>              
+        </article>
+    </section>
+</div>

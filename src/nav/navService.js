@@ -4,6 +4,11 @@ appModule.factory('navService', function () {
             displayName: 'Main',
             url: '#/main',
             name: 'main'
+        },
+        {
+            displayName: 'Temperature',
+            url: '#/temperature',
+            name: 'temperature'
         }
     ];
 
