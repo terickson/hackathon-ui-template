@@ -6,7 +6,7 @@
 <nav id="navbar">
     <ul>
         <li ng-repeat="nav in navMenu" class="{{ nav.name }}">
-            <a href="{{ nav.url }}">{{ nav.displayName }}</a>
+            <a href="{{ nav.url }}" ng-class="{active:active.nav == nav.name }">{{ nav.displayName }}</a>
         </li>
     </ul>
 </nav>
