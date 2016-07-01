@@ -1,0 +1,11 @@
+<div id="page-spark">
+<ul>
+    <li class="card-message" ng-class="getClass($index)" ng-repeat="message in messages | orderBy:'created':true">
+                        <p>{{message.created}} {{message.personEmail}} {{message.text}}</p>
+    </li>
+</ul>
+<textarea ng-model="message">
+    
+</textarea>
+<button ng-if="message" ng-click="sendMessage()">Post Message</button>
+</div>

@@ -12,12 +12,12 @@ appModule.factory('navService', function () {
         },
         {
             displayName: 'Local',
-            url: '#/localCommunity',
+            url: '#/community/local',
             name: 'local'
         },
         {
             displayName: 'Global',
-            url: '#/globalCommunity',
+            url: '#/community/global',
             name: 'global'
         },
         {
