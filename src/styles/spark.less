@@ -1,0 +1,39 @@
+
+@sparkFooterHeight: 3em;
+
+#page-spark {
+    ul {
+        height: calc(~"100%" - @sparkFooterHeight);
+        overflow: scroll;
+    }
+    li {
+        margin: 0.5em 1em;
+        header {
+            .flex;
+            p {
+                font-size: smaller;
+                + p {
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+    footer {
+        .flex(row, nowrap);
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        height: @sparkFooterHeight;
+        textarea {
+            padding: 0.5em 1em;
+            outline: none;
+            overflow: auto;
+            resize: none;
+            height: 100%;
+            flex: 1;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}

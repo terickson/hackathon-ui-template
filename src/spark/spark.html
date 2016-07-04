@@ -1,11 +1,17 @@
 <div id="page-spark">
-<ul>
-    <li class="card-message" ng-class="getClass($index)" ng-repeat="message in messages | orderBy:'created':true">
-                        <p>{{message.created}} {{message.personEmail}} {{message.text}}</p>
-    </li>
-</ul>
-<textarea ng-model="message">
-    
-</textarea>
-<button ng-if="message" ng-click="sendMessage()">Post Message</button>
+    <ul>
+        <li class="card" ng-class="getClass($index)" ng-repeat="message in messages | orderBy:'created':true">
+            <header>
+                <p>{{ message.personEmail }}</p>
+                <p>{{ message.created }}</p>
+            </header>
+            <p>{{ message.text }}</p>
+        </li>
+    </ul>
+    <footer>
+        <textarea ng-model="message"/>
+        <button class="btn btn-primary" ng-disabled="!message" ng-click="sendMessage()">
+            <i class="fa fa-send fa-2x"/>
+        </button>
+    </footer>
 </div>

@@ -4,7 +4,7 @@ appModule.factory('navService', function () {
             displayName: 'Home',
             url: '#/home',
             name: 'home'
-        },    
+        },
         {
             displayName: 'Farm',
             url: '#/farm',
@@ -26,7 +26,7 @@ appModule.factory('navService', function () {
             name: 'reports'
         },
         {
-            displayName: 'BC',
+            displayName: 'About',
             url: '#/businessCase',
             name: 'businessCase'
         },
@@ -34,16 +34,6 @@ appModule.factory('navService', function () {
             displayName: 'Thanks',
             url: '#/thankYou',
             name: 'thankYou'
-        },
-        {
-            displayName: 'Spark/Tropo Demo',
-            url: '#/main',
-            name: 'main'
-        },
-        {
-            displayName: 'Relayr Demo',
-            url: '#/temperature',
-            name: 'temperature'
         }
     ];
 
