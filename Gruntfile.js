@@ -228,14 +228,21 @@ module.exports = function (grunt) {
             }
         },
         postcss: {
-            options: {
-                map: true,
-                processors: [
-                    require('autoprefixer')({ browsers: 'last 2 versions' })
-                ]
-            },
-            dist: {
-                src: projectConfig.outputDir + '/app.css'
+            all: {
+                src: projectConfig.outputDir + '/app.css',
+                options: {
+                    map: true,
+                    processors: [
+                        require('autoprefixer')({
+                            browsers: ['last 2 versions']
+                        }),
+                        require("csswring")({
+                            map: true,
+                            preserveHacks: true,
+                            removeAllComments: true
+                        })
+                    ]
+                }
             }
         },
         uglify: {
@@ -321,7 +328,7 @@ module.exports = function (grunt) {
               to: "$location.host(),"
             }]
           }
-        },        
+        },
         connect: {
             server: {
                 options: {
