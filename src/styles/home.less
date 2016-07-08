@@ -1,4 +1,74 @@
 
 #page-home {
-
+    ul {
+        .flex;
+        li {
+            .flex;
+            flex: 1;
+            margin: 0.25em;
+        }
+    }
+    .team {
+        ul {
+            justify-content: space-around;
+        }
+        li {
+            .no-shadow;
+            .flex(column-reverse, nowrap, center);
+            background: none;
+        }
+        p {
+            .shadow;
+            width: 7em;
+            height: 7em;
+            border-radius: 50%;
+            margin-bottom: 0.75em;
+            background-repeat: no-repeat;
+            background-position: center;
+            &.todd {
+                background-size: 100%;
+                background-position: center -0.75em;
+                background-image: url(images/todd-erickson.jpg);
+            }
+            &.david {
+                background-size: 100%;
+                background-position: center -0.75em;
+                background-image: url(images/david-guidos.jpg);
+            }
+            &.shawn {
+                background-size: 125%;
+                background-position: center -0.75em;
+                background-image: url(images/shawn-donoho.jpg);
+            }
+            &.tim {
+                background-size: 108%;
+                background-position: center 0.15em;
+                background-image: url(images/tim-fuller.jpg);
+            }
+        }
+    }
+    .colors {
+        li {
+            height: 4em;
+            flex-basis: 20%;
+            align-items: center;
+            p {
+                flex: 1;
+                color: white;
+                text-align: center;
+                text-shadow: 1px 1px 1px @detail;
+            }
+        }
+    }
 }
+
+@beeColors: @beeText, @beeHeader, @beeDetail, @beeHighlight, @beeYellow, @beeOrange, @beeBrown, @beeNavy, @beeNavy2, @beeGrayLight, @beeGrayDark, @beeSalmon, @beePeach, @beeWhite, @beeDark, @beeLight, @beeMute, @beeGreen, @beeBlue, @beeRed;
+
+.mix-bee-colors(@n, @i: 1) when (@i =< @n) {
+    .colors li:nth-child(@{i}) {
+        // @color: desaturate(extract(@color-wheel-colors, @i), 8%);
+        .gradient(extract(@beeColors, @i));
+    }
+    .mix-bee-colors(@n, (@i + 1));
+}
+.mix-bee-colors(length(@beeColors));
