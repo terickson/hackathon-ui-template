@@ -75,30 +75,10 @@ module.exports = function (grunt) {
             }
         },
         copy: {
-            "release-notes": {
-                files: [
-                    {
-                        cwd: ".",
-                        src: ['releaseNotes.md'],
-                        dest: projectConfig.outputDir,
-                        expand: true
-                    }
-                ]
-            },
             "font-awesome-files": {
                 files: [
                     {
                         cwd: projectConfig.depDir + "/font-awesome/fonts/",
-                        src: ['**'],
-                        dest: projectConfig.outputDir + "/fonts/",
-                        expand: true
-                    }
-                ]
-            },
-            "flat-icon-files": {
-                files: [
-                    {
-                        cwd: projectConfig.sourceDir + '/flaticon/',
                         src: ['**'],
                         dest: projectConfig.outputDir + "/fonts/",
                         expand: true
@@ -137,26 +117,6 @@ module.exports = function (grunt) {
                 options: {
                     process: addCacheBustingToGeneratedFileReferences
                 }
-            },
-            "browser-support-images": {
-                files: [
-                    {
-                        cwd: projectConfig.depDir + "/browser-detector/src/img/",
-                        src: ['**'],
-                        dest: projectConfig.outputDir + "/images/",
-                        expand: true
-                    }
-                ]
-            },
-            "emoji-images": {
-                files: [
-                    {
-                        cwd: projectConfig.depDir + "/ng-emoticons/images",
-                        src: ["*.png"],
-                        dest: projectConfig.outputDir + "/img/",
-                        expand: true
-                    }
-                ]
             },
             "assets": {
                 files: [
@@ -228,14 +188,21 @@ module.exports = function (grunt) {
             }
         },
         postcss: {
-            options: {
-                map: true,
-                processors: [
-                    require('autoprefixer')({ browsers: 'last 2 versions' })
-                ]
-            },
-            dist: {
-                src: projectConfig.outputDir + '/app.css'
+            all: {
+                src: projectConfig.outputDir + '/app.css',
+                options: {
+                    map: true,
+                    processors: [
+                        require('autoprefixer')({
+                            browsers: ['last 2 versions']
+                        }),
+                        require("csswring")({
+                            map: true,
+                            preserveHacks: true,
+                            removeAllComments: true
+                        })
+                    ]
+                }
             }
         },
         uglify: {
@@ -321,7 +288,7 @@ module.exports = function (grunt) {
               to: "$location.host(),"
             }]
           }
-        },        
+        },
         connect: {
             server: {
                 options: {
