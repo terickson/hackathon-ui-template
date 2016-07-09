@@ -29,11 +29,6 @@ appModule.factory('navService', function () {
             displayName: 'About',
             url: '#/businessCase',
             name: 'businessCase'
-        },
-        {
-            displayName: 'Thanks',
-            url: '#/thankYou',
-            name: 'thankYou'
         }
     ];
 
