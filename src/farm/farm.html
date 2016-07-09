@@ -2,28 +2,42 @@
     <section>
         <h1>Farm stuff</h1>
     </section>
-    <ul class="fields">
+    <ul class="fields cards">
         <li>
-        BeeCount1: {{beeCount1}}
+            <h3>Area 1</h3>
+            <article>
+                <h4>Bee Count</h4>
+                <p>{{ beeCount1 }}</p>
+            </article>
         </li>
         <li>
-        BeeCount2: {{beeCount2}}
+            <h3>Area 2</h3>
+            <article>
+                <h4>Bee Count</h4>
+                <p>{{ beeCount2 }}</p>
+            </article>
         </li>
         <li>
-        BeeCount3: {{beeCount3}}
+            <h3>Area 3</h3>
+            <article>
+                <h4>Bee Count</h4>
+                <p>{{ beeCount3 }}</p>
+            </article>
         </li>
         <li>
-        BeeCount4: {{beeCount4}}
+            <h3>Area 4</h3>
+            <article>
+                <h4>Bee Count</h4>
+                <p>{{ beeCount4 }}</p>
+            </article>
         </li>
     </ul>
-
     <ul class="hive">
         <li ng-click="hivePicShow=!hivePicShow">
-        Hive Temp: {{hiveTemp}}
+            <p>Hive Temp: {{ hiveTemp }}</p>
         </li>
         <li ng-if="hivePicShow">
-            <img ng-src="{{hiveImageUrl}}">
+            <img ng-src="{{ hiveImageUrl }}">
         </li>
     </ul>
-
 </div>
