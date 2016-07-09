@@ -7,11 +7,8 @@ appModule.controller('SparkCtrl', function ($scope, $stateParams, navService, Ac
 
     function init(){
         navService.setActive($stateParams.room);
-        if($stateParams.room === 'global'){
-            $scope.roomname = 'hackathon2016';
-        }else{
-            $scope.roomname = 'hackathon2016';
-        }
+        $scope.roomname = $stateParams.room;
+        
         getMessages();
     }
 
