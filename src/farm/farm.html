@@ -2,4 +2,28 @@
     <section>
         <h1>Farm stuff</h1>
     </section>
+    <ul class="fields">
+        <li>
+        BeeCount1: {{beeCount1}}
+        </li>
+        <li>
+        BeeCount2: {{beeCount2}}
+        </li>
+        <li>
+        BeeCount3: {{beeCount3}}
+        </li>
+        <li>
+        BeeCount4: {{beeCount4}}
+        </li>
+    </ul>
+
+    <ul class="hive">
+        <li ng-click="hivePicShow=!hivePicShow">
+        Hive Temp: {{hiveTemp}}
+        </li>
+        <li ng-if="hivePicShow">
+            <img ng-src="{{hiveImageUrl}}">
+        </li>
+    </ul>
+
 </div>
