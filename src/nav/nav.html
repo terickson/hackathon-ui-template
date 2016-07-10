@@ -1,7 +1,10 @@
 <nav id="navbar">
     <ul>
         <li ng-repeat="nav in navMenu" class="{{ nav.name }}">
-            <a href="{{ nav.url }}" ng-class="{active:active.nav == nav.name }">{{ nav.displayName }}</a>
+            <a href="{{ nav.url }}" ng-class="{active:active.nav == nav.name }">
+                <i class="fa {{ nav.icon }}"/>
+                <span>{{ nav.displayName }}</span>
+            </a>
         </li>
     </ul>
 </nav>
