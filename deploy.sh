@@ -14,7 +14,6 @@ esac
 npm install
 grunt
 for i in ${hosts[@]}; do
-    npm install
     grunt
     ssh hackathon@${i} "rm -rf /var/www/html/*";
     scp -r ./dist/* hackathon@${i}:/var/www/html/

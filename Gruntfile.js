@@ -326,7 +326,7 @@ module.exports = function (grunt) {
     grunt.registerTask('css', ['less', 'postcss']);
     grunt.registerTask('compile', ['clean', 'create-module-definition', 'concat', 'css', 'copy:ui-bootstrap-html', 'html2js', 'copy', 'jshint:commandLine' ]);
     grunt.registerTask('optimize', ['ngAnnotate', 'uglify:beautify', 'uglify:all']);
-    grunt.registerTask('package', ['compile', 'replace:restBase', 'replace:envCheck', 'optimize']);
+    grunt.registerTask('package', ['compile', 'replace:envCheck', 'optimize']);
     grunt.registerTask('analyze', ['jshint:report']);
     grunt.registerTask('release', ['package', 'gh-pages']);
     grunt.registerTask('cit', ['package']);
