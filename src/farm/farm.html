@@ -1,50 +1,43 @@
 <div id="page-farm">
     <section>
-        <h1>Farm stuff</h1>
+        <h2>Farm stuff</h2>
+        <ul class="fields">
+            <li>
+                <h3>Area 1</h3>
+                <article>
+                    <h4>Bee Index</h4>
+                    <p>{{ beeCount1 }}</p>
+                </article>
+            </li>
+            <li>
+                <h3>Area 2</h3>
+                <article>
+                    <h4>Bee Index</h4>
+                    <p>{{ beeCount2 }}</p>
+                </article>
+            </li>
+            <li>
+                <h3>Area 3</h3>
+                <article>
+                    <h4>Bee Index</h4>
+                    <p>{{ beeCount3 }}</p>
+                </article>
+            </li>
+            <li>
+                <h3>Area 4</h3>
+                <article>
+                    <h4>Bee Index</h4>
+                    <p>{{ beeCount4 }}</p>
+                </article>
+            </li>
+        </ul>
     </section>
-    <ul class="fields">
+    <ul class="hives">
         <li>
-            <h3>Area 1</h3>
-            <article>
-                <h4>Bee Count</h4>
-                <p>{{ beeCount1 }}</p>
-            </article>
-        </li>
-        <li>
-            <h3>Area 2</h3>
-            <article>
-                <h4>Bee Count</h4>
-                <p>{{ beeCount2 }}</p>
-            </article>
-        </li>
-        <li>
-            <h3>Area 3</h3>
-            <article>
-                <h4>Bee Count</h4>
-                <p>{{ beeCount3 }}</p>
-            </article>
-        </li>
-        <li>
-            <h3>Area 4</h3>
-            <article>
-                <h4>Bee Count</h4>
-                <p>{{ beeCount4 }}</p>
-            </article>
-        </li>
-    </ul>
-    <ul class="hive">
-        <li ng-click="hivePicShow=!hivePicShow">
             <p>Hive Temp: {{ hiveTemp }}</p>
         </li>
-        <li ng-if="hivePicShow">
+        <li>
             <img ng-src="{{ hiveImageUrl }}">
         </li>
     </ul>
 </div>
-
-# of bees (0 - 100%)
-fertilizers
-pesticides
-type of crop
-
-farm location

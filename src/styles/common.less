@@ -11,7 +11,19 @@ body,
 }
 html,
 body {
-    font-size: medium;
+    font-size: small;
+    @media (min-width: @bp-tablet) {
+        font-size: medium;
+    }
+    @media (min-width: @bp-desk) {
+        font-size: large;
+    }
+    @media (min-width: @bp-wide) {
+        font-size: larger;
+    }
+    @media (min-width: @bp-superwide) {
+        font-size: x-large;
+    }
 }
 body {
     color: @text;

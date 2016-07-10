@@ -29,61 +29,6 @@
     background: @light;
     background-clip: padding-box;
 }
-.cards { // for <ul>s
-    padding: 0 8px;
-    margin-bottom: 32px;
-    @media (min-width: @bp-tablet) {
-        .flex(row, wrap, stretch);
-    }
-    > li {
-        .card;
-        padding: 0;
-        margin: 0.25% 0.5%;
-        margin-bottom: 12px;
-        @media (min-width: @bp-tablet) {
-            flex: 0 0 99%;
-        }
-        > header,
-        > footer {
-            .flex(row, wrap, center);
-            width: 100%;
-            padding: 8px;
-            > * {
-                padding: 0 4px;
-            }
-        }
-        > header {
-            .flex(row, nowrap, flex-start);
-            padding-bottom: 0;
-        }
-        > footer {
-            background: lighten(@white, 4%);
-        }
-    }
-}
-.card-breaks { // apply to <li> within .cards
-    @media (min-width: @bp-tablet) {
-        flex-basis: 49%;
-    }
-    @media (min-width: @bp-desk) {
-        flex-basis: 32.33%;
-    }
-    @media (min-width: @bp-wide) {
-        flex-basis: 24%;
-    }
-    @media (min-width: @bp-superwide) {
-        flex-basis: 19%;
-    }
-}
-.card-breaks-doublewide { // apply to <li> within .cards
-    @media (min-width: @bp-desk) {
-        flex-basis: 49%;
-    }
-    @media (min-width: @bp-wide) {
-        flex-basis: 32.33%;
-    }
-}
-
 // gradients
 .gradient(@color: @white) {
     background-color: @color;
