@@ -1,49 +1,119 @@
 
 #page-farm {
     display: flex;
+    padding-bottom: 2em;
     section {
-        flex: 1;
+        .card;
+        flex: 3;
+        &.hives {
+            flex: 4;
+            overflow: hidden;
+            padding: 0;
+        }
     }
     li {
-        .card;
         margin: 0;
         margin-bottom: 0.5em;
     }
     .fields {
         h3 {
-            .gradient(@beeBlue);
-            padding: 0.5em 1em;
+            .raleway;
+            padding: 0.5em 0.75em;
+            border-bottom: 1px solid @beeGrayLight;
             + div {
+                padding: 0.5em;
                 display: flex;
+                flex-direction: row-reverse;
             }
-        }
-        li {
-            padding: 0;
         }
         article {
             padding: 0.5em;
-            flex-direction: column-reverse;
+            padding-top: 0;
+            flex-direction: column;
             display: flex;
             flex: 1;
             + article {
                 flex: 2;
             }
             &.index {
+                padding-top: 0;
                 align-items: center;
+                flex-direction: column;
             }
         }
         h4 {
-            + p {
-                font-size: 4em;
+            font-weight: 300;
+            white-space: nowrap;
+            padding-bottom: 0.25em;
+            + p { // bee index
+                background-color: @beeGreen;
+                color: @light;
+                font-size: 2.75em;
                 font-weight: 300;
-                line-height: 0.7em;
+                line-height: 1.5em;
+                border-radius: 50%;
+                text-align: center;
+                width: 1.75em;
+                height: 1.75em;
+                border: 1px solid @beeDetail;
             }
         }
     }
-    .hives {
-
+    .area {
+        padding: 0;
+    }
+    .crop {
+        p {
+            &:first-child {
+                b {
+                    color: @beeNavy;
+                }
+            }
+        }
     }
     .temp {
-        font-size: 1.2em;
+        flex: 2;
+        color: @beeGreen;
+        font-size: 1.4em;
+        text-align: center;
+        font-weight: 300;
+        padding: 0.15em;
+        border: 0.25em solid @beeGreen;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h4 {
+            color: @beeText;
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+        p {
+            font-size: 3em;
+            line-height: 1.5em;
+        }
+        i {
+            &:before {
+                content: "\f118";
+            }
+        }
+        &.meh {
+            color: @beeSalmon;
+            border-color: @beeSalmon;
+            i {
+                &:before {
+                    content: "\f11a";
+                }
+            }
+        }
+        &.red {
+            color: @beeRed;
+            border-color: @beeRed;
+            i {
+                &:before {
+                    content: "\f119";
+                }
+            }
+        }
     }
 }
