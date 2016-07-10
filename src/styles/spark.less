@@ -1,6 +1,6 @@
 
 @sparkFooterHeight: 4.5em;
-@sparkHeaderHeight: 3.5em;
+@sparkHeaderHeight: 3em;
 
 #page-spark {
     overflow-y: hidden;
@@ -15,7 +15,7 @@
         }
         img {
             width: auto;
-            height: 80%;
+            height: 75%;
         }
     }
     > section {
@@ -69,9 +69,13 @@
             flex: 1;
             &:focus {
                 outline: none;
+                border: 1px solid #ccc;
+                box-shadow: none;
             }
         }
         button {
+            .gradient(@beeYellow);
+            color: @beeMute;
             padding: 1.2em;
         }
     }
