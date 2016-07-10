@@ -1,6 +1,6 @@
 
-@sparkFooterHeight: 4em;
-@sparkHeaderHeight: 3em;
+@sparkFooterHeight: 4.5em;
+@sparkHeaderHeight: 3.5em;
 
 #page-spark {
     > header {
@@ -10,7 +10,7 @@
         height: @sparkHeaderHeight;
         border-bottom: 1px dotted @beeGrayLight;
         p {
-            padding: 0 0.5em;
+            padding: 0 1em;
         }
         img {
             width: auto;
@@ -18,6 +18,8 @@
         }
     }
     ul {
+        .flex(column-reverse, nowrap);
+        justify-content: flex-end;
         height: calc(~"100%" - (@sparkHeaderHeight + @sparkFooterHeight));
         overflow-x: hidden;
         overflow-y: scroll;
@@ -25,6 +27,7 @@
     }
     li {
         .card;
+        margin: 0.25em 1em;
         padding: 0.5em 1em 0.75em 1em;
         > p {
             font-size: 1.2em;
@@ -54,6 +57,7 @@
         }
         textarea {
             font-size: 1.2em;
+            font-weight: 400;
             color: @base;
             padding: 1em;
             outline: none;
