@@ -4,7 +4,7 @@
 
 #page-spark {
     overflow-y: hidden;
-    > header {
+    > header { // spark banner
         .flex(row, nowrap, center);
         justify-content: center;
         background: @light;
@@ -39,9 +39,10 @@
         header {
             .flex;
             p {
-                color: @beeGrayDark;
+                color: @beeGreen;
                 font-size: smaller;
                 + p {
+                    color: @beeGrayDark;
                     margin-left: auto;
                 }
             }
@@ -77,6 +78,11 @@
             .gradient(@beeYellow);
             color: @beeMute;
             padding: 1.2em;
+            &:focus {
+                color: @base;
+                outline: none;
+                box-shadow: none;
+            }
         }
     }
 }
