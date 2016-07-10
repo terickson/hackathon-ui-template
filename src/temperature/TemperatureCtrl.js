@@ -1,13 +1,8 @@
-appModule.controller('TemperatureCtrl', function ($scope, navService, mySocket) {
+appModule.controller('TemperatureCtrl', function ($scope, navService) {
     init();
     $scope.messages = [];
     $scope.getClass = getClass;
     $scope.resetReadings = resetReadings;
-
-    mySocket.on('tempData', function (message) {
-        console.log(message);
-        addMessage(message.temperature);
-    });
 
     function init(){
         navService.setActive('temperature');

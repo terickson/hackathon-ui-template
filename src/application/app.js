@@ -14,4 +14,4 @@ appModule.config(['$animateProvider', function($animateProvider) {
     $animateProvider.classNameFilter(/anim-ng/);
 }]);
 
-appModule.value('restBaseUrl', 'http://ciscoHackathon2016.cloudapp.net:5000/');
+appModule.value('restBaseUrl', 'http://prod--hackathon2016--hackathon-api--bc5588.gce.shipped-cisco.com');
