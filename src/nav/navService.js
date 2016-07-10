@@ -3,32 +3,38 @@ appModule.factory('navService', function () {
         {
             displayName: 'Home',
             url: '#/home',
-            name: 'home'
+            name: 'home',
+            icon: ''
         },
         {
-            displayName: 'Farm',
+            displayName: 'Stats',
             url: '#/farm',
-            name: 'farm'
+            name: 'farm',
+            icon: 'fa-dashboard'
         },
         {
             displayName: 'Local',
             url: '#/community/local',
-            name: 'local'
+            name: 'local',
+            icon: 'fa-truck'
         },
         {
             displayName: 'Global',
             url: '#/community/global',
-            name: 'global'
+            name: 'global',
+            icon: 'fa-globe'
         },
         {
             displayName: 'Reports',
             url: '#/reports',
-            name: 'reports'
+            name: 'reports',
+            icon: 'fa-area-chart'
         },
         {
             displayName: 'About',
             url: '#/businessCase',
-            name: 'businessCase'
+            name: 'businessCase',
+            icon: 'fa-heart-o'
         }
     ];
 

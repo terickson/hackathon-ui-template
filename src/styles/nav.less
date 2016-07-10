@@ -1,5 +1,5 @@
 
-@navbarHeight: 4.5em;
+@navbarHeight: 5em;
 
 #navbar {
     .flex(row, nowrap, stretch);
@@ -24,10 +24,12 @@
     }
     a {
         .gradient(@beeYellow);
-        color: @beeText;
+        flex-direction: column;
+        color: @beeMute;
         align-items: center;
         text-align: center;
         font-weight: 600;
+        font-size: 1.1em;
         &:hover, &:focus, &.active {
             .gradient(lighten(@beeYellow, 8%));
             color: @beeDark;
@@ -36,6 +38,10 @@
         }
         &.active {
             cursor: default;
+        }
+        i {
+            font-size: 1.4em;
+            line-height: 1.2em;
         }
     }
 }
