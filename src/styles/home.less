@@ -8,7 +8,19 @@
             margin: 0.25em;
         }
     }
+    .card {
+        .flex(row, nowrap);
+    }
+    .plan {
+        flex: 1;
+        padding: 1em;
+        font-size: 1.2em;
+        h2 {
+            padding-bottom: 0.25em;
+        }
+    }
     .team {
+        flex: 2;
         ul {
             justify-content: space-around;
         }
@@ -52,6 +64,7 @@
         }
     }
     .tech {
+        padding: 0.25em;
         li {
             height: 8em;
             flex-basis: 30%;
