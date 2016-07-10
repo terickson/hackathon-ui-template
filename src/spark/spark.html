@@ -1,9 +1,13 @@
 <div id="page-spark">
+    <header>
+        <p>Powered by</p>
+        <img src="images/logo-spark.png">
+    </header>
     <ul>
         <li class="card" ng-class="getClass($index)" ng-repeat="message in messages | orderBy:'created':true">
             <header>
                 <p>{{ message.personEmail }}</p>
-                <p>{{ message.created }}</p>
+                <p>{{ message.created | date:'short' }}</p>
             </header>
             <p>{{ message.text }}</p>
         </li>

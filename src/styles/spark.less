@@ -1,17 +1,40 @@
 
-@sparkFooterHeight: 3em;
+@sparkFooterHeight: 4em;
+@sparkHeaderHeight: 3em;
 
 #page-spark {
+    > header {
+        .flex(row, nowrap, center);
+        justify-content: center;
+        background: @light;
+        height: @sparkHeaderHeight;
+        border-bottom: 1px dotted @beeGrayLight;
+        p {
+            padding: 0 0.5em;
+        }
+        img {
+            width: auto;
+            height: 80%;
+        }
+    }
     ul {
-        height: calc(~"100%" - @sparkFooterHeight);
+        height: calc(~"100%" - (@sparkHeaderHeight + @sparkFooterHeight));
         overflow-x: hidden;
         overflow-y: scroll;
+        padding-top: 0.75em;
     }
     li {
         .card;
+        padding: 0.5em 1em 0.75em 1em;
+        > p {
+            font-size: 1.2em;
+            font-weight: 400;
+            color: @beeDark;
+        }
         header {
             .flex;
             p {
+                color: @beeGrayDark;
                 font-size: smaller;
                 + p {
                     margin-left: auto;
@@ -25,8 +48,12 @@
         width: 100%;
         bottom: 0;
         height: @sparkFooterHeight;
+        textarea,
+        button {
+            border-radius: 0;
+        }
         textarea {
-            padding: 0.5em 1em;
+            padding: 1em;
             outline: none;
             overflow: auto;
             resize: none;
@@ -35,6 +62,9 @@
             &:focus {
                 outline: none;
             }
+        }
+        button {
+            padding: 1.2em;
         }
     }
 }
