@@ -1,43 +1,72 @@
 <div id="page-farm">
-    <section>
-        <h2>Farm stuff</h2>
-        <ul class="fields">
+    <section class="fields">
+        <ul>
             <li>
                 <h3>Area 1</h3>
-                <article>
-                    <h4>Bee Index</h4>
-                    <p>{{ beeCount1 }}</p>
-                </article>
+                <div>
+                    <article class="index">
+                        <h4>Bee Index</h4>
+                        <p>{{ beeCount1 }}</p>
+                    </article>
+                    <article>
+                        <p>Crop Type: <b>Apples</b></p>
+                        <p>Fertilizers: <b>Something</b></p>
+                        <p>Pesticides: <b>Something</b></p>
+                    </article>
+                </div>
             </li>
             <li>
                 <h3>Area 2</h3>
-                <article>
-                    <h4>Bee Index</h4>
-                    <p>{{ beeCount2 }}</p>
-                </article>
+                <div>
+                    <article class="index">
+                        <h4>Bee Index</h4>
+                        <p>{{ beeCount2 }}</p>
+                    </article>
+                    <article>
+                        <p>Crop Type: <b>Peaches</b></p>
+                        <p>Fertilizers: <b>Something</b></p>
+                        <p>Pesticides: <b>Something</b></p>
+                    </article>
+                </div>
             </li>
             <li>
                 <h3>Area 3</h3>
-                <article>
-                    <h4>Bee Index</h4>
-                    <p>{{ beeCount3 }}</p>
-                </article>
+                <div>
+                    <article class="index">
+                        <h4>Bee Index</h4>
+                        <p>{{ beeCount3 }}</p>
+                    </article>
+                    <article>
+                        <p>Crop Type: <b>Pears</b></p>
+                        <p>Fertilizers: <b>Something</b></p>
+                        <p>Pesticides: <b>Something</b></p>
+                    </article>
+                </div>
             </li>
             <li>
                 <h3>Area 4</h3>
-                <article>
-                    <h4>Bee Index</h4>
-                    <p>{{ beeCount4 }}</p>
-                </article>
+                <div>
+                    <article class="index">
+                        <h4>Bee Index</h4>
+                        <p>{{ beeCount4 }}</p>
+                    </article>
+                    <article>
+                        <p>Crop Type: <b>Apricots</b></p>
+                        <p>Fertilizers: <b>Something</b></p>
+                        <p>Pesticides: <b>Something</b></p>
+                    </article>
+                </div>
             </li>
         </ul>
     </section>
-    <ul class="hives">
-        <li>
-            <p>Hive Temp: {{ hiveTemp }}</p>
-        </li>
-        <li>
-            <img ng-src="{{ hiveImageUrl }}">
-        </li>
-    </ul>
+    <section class="hives">
+        <ul>
+            <li class="temp">
+                <p>Hive Temp: <b>{{ hiveTemp }}</b></p>
+            </li>
+            <li>
+                <img ng-src="{{ hiveImageUrl }}">
+            </li>
+        </ul>
+    </section>
 </div>
