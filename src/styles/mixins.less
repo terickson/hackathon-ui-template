@@ -15,19 +15,10 @@
     border-radius: @radius;
 }
 .scroll {
+    -webkit-overflow-scrolling: touch;
     -ms-overflow-style: scrollbar;
     overflow-x: hidden;
-    overflow-y: auto;
-}
-.sticky { // use on page-level top-bar
-    position: fixed;
-    background: @light;
-    border-bottom: 1px solid @detail;
-    top: @titlebar-height + @nav-height;
-    height: @topbar-height;
-    margin-bottom: 0;
-    z-index: @z-topbar;
-    width: 100%;
+    overflow-y: scroll;
 }
 
 // cards
@@ -96,24 +87,7 @@
 // gradients
 .gradient(@color: @white) {
     background-color: @color;
-    background-image: linear-gradient(to bottom, @color, darken(@color, 3%));
-}
-.gradient-hover(@color: @white) {
-    background-color: @color;
-    background-image: linear-gradient(to bottom, lighten(@color, 6%), darken(@color, 6%));
-    background-size: 100% 200%;
-    transition: background-position @transitionTime;
-    background-position: 0 100%;
-    &:hover {
-        background-position: 0 0;
-    }
-}
-.gradient-linear(@color: lighten(@white, 1%)) {
-    background-image: linear-gradient(@color, @color);
-    background-repeat: no-repeat;
-    background-size: 100% 92%;
-    background-position: center center;
-
+    background-image: linear-gradient(to bottom, lighten(@color, @tweak/2), darken(@color, @tweak/2));
 }
 
 // flex

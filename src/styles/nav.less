@@ -15,7 +15,7 @@
     }
 }
 #navbar {
-    border-bottom: 0.25em solid @beeDark;
+    border-bottom: 1px solid @light;
     height: @navbarHeight;
     overflow: hidden;
     ul {
@@ -24,6 +24,7 @@
     }
     a {
         .gradient(@beeYellow);
+        border-bottom: 0.2em solid @beeDark;
         flex-direction: column;
         color: @beeMute;
         align-items: center;
@@ -31,7 +32,7 @@
         font-weight: 600;
         font-size: 1.1em;
         &:hover, &:focus, &.active {
-            .gradient(lighten(@beeYellow, 8%));
+            .gradient(lighten(@beeYellow, @tweak*2));
             color: @beeDark;
             outline: none;
             text-decoration: none;
