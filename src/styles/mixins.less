@@ -15,19 +15,10 @@
     border-radius: @radius;
 }
 .scroll {
+    -webkit-overflow-scrolling: touch;
     -ms-overflow-style: scrollbar;
     overflow-x: hidden;
-    overflow-y: auto;
-}
-.sticky { // use on page-level top-bar
-    position: fixed;
-    background: @light;
-    border-bottom: 1px solid @detail;
-    top: @titlebar-height + @nav-height;
-    height: @topbar-height;
-    margin-bottom: 0;
-    z-index: @z-topbar;
-    width: 100%;
+    overflow-y: scroll;
 }
 
 // cards

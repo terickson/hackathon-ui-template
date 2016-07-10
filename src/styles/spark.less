@@ -3,6 +3,7 @@
 @sparkHeaderHeight: 3.5em;
 
 #page-spark {
+    overflow-y: hidden;
     > header {
         .flex(row, nowrap, center);
         justify-content: center;
@@ -17,13 +18,14 @@
             height: 80%;
         }
     }
+    > section {
+        .scroll;
+        height: calc(~"100%" - (@sparkHeaderHeight + @sparkFooterHeight));
+        padding-top: 0.75em;
+    }
     ul {
         .flex(column-reverse, nowrap);
         justify-content: flex-end;
-        height: calc(~"100%" - (@sparkHeaderHeight + @sparkFooterHeight));
-        overflow-x: hidden;
-        overflow-y: scroll;
-        padding-top: 0.75em;
     }
     li {
         .card;

@@ -4,7 +4,7 @@ appModule.factory('navService', function () {
             displayName: 'Home',
             url: '#/home',
             name: 'home',
-            icon: ''
+            icon: 'fa-home'
         },
         {
             displayName: 'Stats',
@@ -34,7 +34,7 @@ appModule.factory('navService', function () {
             displayName: 'About',
             url: '#/businessCase',
             name: 'businessCase',
-            icon: 'fa-heart-o'
+            icon: 'fa-heart'
         }
     ];
 
