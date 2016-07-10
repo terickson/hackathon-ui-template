@@ -1,4 +1,4 @@
-appModule.controller('MainCtrl', function ($scope, navService, Actions, mySocket) {
+appModule.controller('MainCtrl', function ($scope, navService, Actions) {
     init();
     $scope.messages = [];
     $scope.testTropo = testTropo;
@@ -8,9 +8,6 @@ appModule.controller('MainCtrl', function ($scope, navService, Actions, mySocket
     $scope.clearAlert = clearAlert;
     $scope.alert = null;
     $scope.phoneNumbers = null;
-    mySocket.on('alert', function (message) {
-        $scope.alert = message.data;
-    });
 
     function init(){
         navService.setActive('main');
