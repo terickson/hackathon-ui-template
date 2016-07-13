@@ -1,0 +1,25 @@
+
+#page-reports {
+    section,
+    ul {
+        .flex;
+        height: 100%;
+        width: 100%;
+    }
+    li {
+        .card;
+        .suez;
+        flex: 1;
+        font-size: 2em;
+        text-align: center;
+        background-size: contain;
+        background-position: center 2.25em;
+        background-repeat: no-repeat;
+        &:first-child {
+            background-image: url("images/bg1.png");
+        }
+        &:last-child {
+            background-image: url("images/bg2.png");
+        }
+    }
+}
