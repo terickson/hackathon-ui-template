@@ -9,7 +9,9 @@
         }
     }
     .card {
-        .flex(row, nowrap);
+        @media (min-width: @bp-tablet) {
+            .flex(row, nowrap);
+        }
     }
     .plan {
         flex: 1;
